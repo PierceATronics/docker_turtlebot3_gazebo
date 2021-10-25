@@ -6,7 +6,7 @@ Install [Docker](https://docs.docker.com/engine/install/).
 
 Install [docker-compose](https://docs.docker.com/compose/install/).
 
-First, make sure to build the Docker image
+Build the image for the docker container. Note: You may need execute the following command with sudo/admin privelges depending on your system. Building the image will take a while.
 ```
 docker build . -t turtlebot3
 ```
