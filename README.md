@@ -2,6 +2,8 @@
 
 ## Instructions
 
+Install [Docker](https://docs.docker.com/engine/install/) for your operating system.
+
 First, make sure to build the Docker image
 ```
 docker build . -t turtlebot3
