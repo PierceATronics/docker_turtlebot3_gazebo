@@ -2,7 +2,9 @@
 
 ## Instructions
 
-Install [Docker](https://docs.docker.com/engine/install/) for your operating system.
+Install [Docker](https://docs.docker.com/engine/install/).
+
+Install [docker-compose](https://docs.docker.com/compose/install/).
 
 First, make sure to build the Docker image
 ```
