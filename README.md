@@ -11,19 +11,22 @@ Build the image for the docker container. Note: You may need execute the followi
 docker build . -t turtlebot3
 ```
 
-To enable the GUI for viewing gazebo, run
+To enable the GUI for viewing gazebo and other GUI components, run
 ```
 xhost +local:root
 ```
 
-Launch Docker service for turtlebot3 / gazebo
+Launch the Docker container which runs a Ubuntu 18.04 environment complete with ROS Melodic, Gazebo, and packages associated with Turtlebot3.
 ```
-docker-compose up
-```
-
-You can connect to the running Docker container and executure code via the command
-```
-docker exec -it [name_of_the_running_docker_container] bash
+./start_turtlebot3_container
 ```
 
-Be sure to perform development of your packages in ~/melodic_workspace. This is the volume that the docker container mounts.
+Connect to the Docker container to run code/commands
+```
+./connect_to_turtlbot3_container
+```
+
+## TODO
+- Make the volume to mount a parameter to "./start_turtlebot3_container"
+- Test how to do Xserver forwarding on MAC and  Windows
+- 
