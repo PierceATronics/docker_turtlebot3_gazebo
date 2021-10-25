@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+docker run --name my_turtlebot3_env -v /home/pierce/intro_robotics_labs:/catkin_ws/src/intro_robotics_labs -v /tmp/.X11-unix:/tmp/.X11-unix:rw --restart=unless-stopped --hostname=turtlebot3 --env-file=env_vars.list -d -i turtlebot3 bash
+
+ 
