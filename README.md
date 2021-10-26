@@ -1,11 +1,12 @@
 # docker_turtlebot3_gazebo
 
-## Instructions
+# Instructions
 
 Install [Docker](https://docs.docker.com/engine/install/).
 
 Install the [Docker python API](https://docker-py.readthedocs.io/en/stable/index.html)
 
+## Linux
 Build the image for the docker container. Note: You may need execute the following command with sudo/admin privelges depending on your system. Building the image will take a while.
 ```
 docker build . -t turtlebot3
@@ -25,6 +26,10 @@ Connect to the Docker container to run code/commands
 ```
 ./connect_to_turtlbot3_container
 ```
+
+## Windows 10
+
+## MAC
 
 ## TODO
 - Make the volume to mount a parameter to "start_turtlebot3_container.py"
