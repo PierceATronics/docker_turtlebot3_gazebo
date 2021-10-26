@@ -7,15 +7,15 @@ client = docker.from_env()
 
 image_name="turtlebot3"
 name="my_turtlebot3_env"
-host_proj_dir="/home/pierce/intro_robotics_labs"
-container_proj_dir="/catkin_ws/src/intro_robotics_labs"
+host_proj_dir="/home/pierce/catkin_ws/src/"
+container_proj_dir="/catkin_ws/src/"
 x11_volume_mnt = "/tmp/.X11-unix:/tmp/.X11-unix:rw"
 
 hostname="turtlebot3"
 env_file="env_vars.list"
 env_vars = ["PYTHONUNBUFFERED=1", 
-                    "DISPLAY", "QT_X11_NO_MITSHM=1",
-                    "NVIDIA_VISIBLE_DEVICE=all", 
+        "DISPLAY=:0", "QT_X11_NO_MITSHM=1",
+                    "NVIDIA_VISIBLE_DEVICES=all", 
                     "NVIDIA_DRIVER_CAPABILITIES=all"]
 restart_policy={"Name": "always"}
 

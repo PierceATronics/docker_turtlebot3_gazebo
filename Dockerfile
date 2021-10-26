@@ -43,17 +43,21 @@ RUN apt update && \
         ros-melodic-rqt-image-view \
         ros-melodic-gmapping \
         ros-melodic-navigation \
-        ros-melodic-interactive-markers
+        ros-melodic-interactive-markers \
+        ros-melodic-dynamixel-sdk \
+        ros-melodic-turtlebot3-msgs \
+        ros-melodic-turtlebot3
 
 # Build catkin_ws
 RUN mkdir -p /catkin_ws/src && \
     rosdep init && \
     rosdep update
 WORKDIR /catkin_ws/src
-RUN git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git && \
-    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git && \
-    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git && \
-    mkdir my_packages
+#RUN git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git && \
+#    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git && \
+#    git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git && \
+#    mkdir my_packages
+
 RUN /bin/bash -c "source /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin_make"
 
 #  Source environments
