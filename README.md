@@ -4,6 +4,8 @@
 
 Install [Docker](https://docs.docker.com/engine/install/).
 
+Install the [Docker python API](https://docker-py.readthedocs.io/en/stable/index.html)
+
 Build the image for the docker container. Note: You may need execute the following command with sudo/admin privelges depending on your system. Building the image will take a while.
 ```
 docker build . -t turtlebot3
