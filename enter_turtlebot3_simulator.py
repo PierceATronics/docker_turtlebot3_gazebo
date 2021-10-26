@@ -23,10 +23,20 @@ restart_policy={"Name": "always"}
 volume_list = [host_proj_dir + ":" + container_proj_dir, x11_volume_mnt]
 
 try:
-    turtlebot3_container = client.containers.get(image_name)
+    turtlebot3_container = client.containers.get(name)
+    container_status = turtlebot3_container.status
 
-    turtlebot3_container.exec_run("bash", tty=True)
+    print("[WARNING] Container", name, "is already created!")
+    print("\t [INFO] Container", name, "status:", turtlebot3_container.status)
+    
+    if(container_status == "exited"):
+        turtlebot3_container.start()
+        print("\t [INFO] Restarting container", name)
+    elif(container_status == "running"):
+        print("\t [INFO] Container", name, "already running.")
+
 except:
+    print("[INFO] Staring container", name)
 
     client.containers.run(image_name, name=name, volumes=volume_list, hostname=hostname,stdin_open=True, detach=True, environment=env_vars, restart_policy=restart_policy)
 
