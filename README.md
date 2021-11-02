@@ -36,3 +36,5 @@ Connect to the Docker container to run code/commands
 - Test how to do Xserver forwarding on MAC and  Windows
 - Make a requirements.txt --> pip install docker for python3
 - Add python3 as prerequiste requirement.
+- Show a tutorial on networking docker with the Physical Turtlebot3.
+

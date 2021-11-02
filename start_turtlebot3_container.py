@@ -18,6 +18,7 @@ env_vars = ["PYTHONUNBUFFERED=1",
                     "NVIDIA_VISIBLE_DEVICES=all", 
                     "NVIDIA_DRIVER_CAPABILITIES=all"]
 restart_policy={"Name": "always"}
+network_mode = "host"
 
 #create the volumes for the container
 volume_list = [host_proj_dir + ":" + container_proj_dir, x11_volume_mnt]
@@ -38,7 +39,7 @@ try:
 except:
     print("[INFO] Staring container", name)
 
-    client.containers.run(image_name, name=name, volumes=volume_list, hostname=hostname,stdin_open=True, detach=True, environment=env_vars, restart_policy=restart_policy)
+    client.containers.run(image_name, name=name, volumes=volume_list, hostname=hostname,stdin_open=True, detach=True, environment=env_vars, restart_policy=restart_policy, network_mode=network_mode)
 
 
 
